@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AutoComplete } from "antd";
 import { useAxios } from "../../hooks/useAxios";
 import { API_KEY } from "../../hooks/useEnv";
@@ -51,7 +51,9 @@ export default function Navbar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <LiveTvIcon className="scale-[1.5]" />
+            <Link to={'/'}>
+              <LiveTvIcon className="scale-[1.5]" />
+            </Link>
           </IconButton>
           <Typography
             className="space-x-6"
