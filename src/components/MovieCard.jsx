@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 export default function MovieCard({ item }) {
   const navigate = useNavigate()
   return (
-    <div className="col-span-3 p-5 bg-neutral-300 rounded-md">
+    <div data-aos="fade-up" data-aos-duration="1300" className="col-span-3 p-5 bg-neutral-300 rounded-md">
       <img src={`${IMG_URL}/${item.poster_path}`} alt="" />
       <div className="mt-5">
         <h1 className="font-bold text-xl mb-3">{item.original_title}</h1>
