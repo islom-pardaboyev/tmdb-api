@@ -3,7 +3,6 @@ import { useAxios } from "../hooks/useAxios";
 import { API_KEY, TOKEN } from "../hooks/useEnv";
 import MovieCard from "../components/MovieCard";
 import { Pagination } from "@mui/material";
-import { RotateSpinner } from "react-spinners-kit";
 
 function UpComing() {
   const [page, setPage] = useState(1);
@@ -21,7 +20,6 @@ function UpComing() {
         }
       )
       .then((res) => {
-        console.log(res);
         setMovieData(res.data.results);
         setTotalPages(res.data.total_pages);
           setIsLoading(false);
@@ -31,7 +29,7 @@ function UpComing() {
     <>
       {loading ? (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
-          <RotateSpinner/>
+          Loading...
         </div>
       ) : (
         <main>
@@ -43,7 +41,6 @@ function UpComing() {
           <div className="flex items-center justify-center py-5">
             <Pagination
               onChange={(a, b) => {
-                console.log(b);
                 setPage(b);
               }}
               count={totalPages}
